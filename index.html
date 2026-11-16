@@ -3,225 +3,415 @@
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#241008">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#170d09">
+<meta name="description" content="Hadota Cafe - حدوته كافيه">
 <title>Hadota Cafe | حدوته كافيه</title>
-
 <style>
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+:root{
+--bg:#170d09;--panel:#2b190f;--gold:#d8b36a;
+--light:#f5dfa9;--white:#fff5e4;--muted:#c9b89c;
 }
-
-body {
-  font-family: Tahoma, Arial, sans-serif;
-  background: #170b07;
-  color: #fff1d0;
-  line-height: 1.7;
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+margin:0;background:var(--bg);color:var(--white);
+font-family:Tahoma,Arial,sans-serif;line-height:1.8
 }
+a{text-decoration:none;color:inherit}
+.container{width:min(1100px,92%);margin:auto}
 
-header {
-  text-align: center;
-  padding: 45px 15px 35px;
-  background: linear-gradient(145deg,#49210d,#1d0c06);
-  border-bottom: 2px solid #c99b43;
+/* Navigation */
+nav{
+position:sticky;top:0;z-index:10;
+background:#1b100bf5;border-bottom:1px solid #76532b;
 }
-
-.logo {
-  font-size: 65px;
-  margin-bottom: 5px;
+.nav{
+min-height:72px;display:flex;align-items:center;
+justify-content:space-between;gap:15px
 }
-
-header h1 {
-  color: #e8bd69;
-  font-family: Georgia,serif;
-  font-size: 39px;
-  letter-spacing: 1px;
+.brand{display:flex;align-items:center;gap:10px}
+.brand-icon{
+width:43px;height:43px;border:1px solid var(--gold);
+border-radius:50%;display:grid;place-items:center;font-size:24px
 }
-
-header h2 {
-  font-size: 25px;
-  margin-top: 5px;
-  color: #f5dba5;
+.brand-name{direction:ltr;text-align:left}
+.brand-name b{font: bold 23px Georgia;color:var(--light)}
+.brand-name small{display:block;font-size:9px;letter-spacing:2px;color:var(--muted)}
+.links{display:flex;gap:23px}
+.links a{font-size:13px;color:#e8d9bd}
+.links a:hover{color:var(--gold)}
+.nav-button{
+background:var(--gold);color:#241309;padding:9px 17px;
+border-radius:30px;font-weight:bold;font-size:13px
 }
+.toggle{display:none;background:none;color:var(--gold);
+border:1px solid #76532b;padding:7px 12px;border-radius:9px;font-size:20px}
 
-header p {
-  margin-top: 12px;
-  color: #dfc69d;
-  font-size: 15px;
+/* Hero */
+.hero{
+background:
+radial-gradient(ellipse at 75% 40%,#69401f77,transparent 40%),
+linear-gradient(120deg,#1a0d07,#3a2011 55%,#170d09);
+border-bottom:1px solid #76532b;
 }
-
-.gold-line {
-  width: 100px;
-  height: 3px;
-  background: #d5a64d;
-  margin: 20px auto;
-  border-radius: 10px;
+.hero-content{
+min-height:570px;display:grid;
+grid-template-columns:1.1fr .9fr;align-items:center;gap:30px;
+padding:55px 0
 }
-
-.welcome {
-  text-align: center;
-  padding: 35px 15px 15px;
+.eyebrow{color:var(--gold);letter-spacing:3px;font-size:11px}
+.hero h1{
+font: bold clamp(45px,7vw,75px) Georgia;
+color:var(--light);direction:ltr;text-align:right;margin:15px 0 0
 }
-
-.welcome h2 {
-  color: #e9bd69;
-  font-size: 26px;
+.hero h2{font-size:30px;margin:5px 0 15px}
+.hero p{color:#d5c2a3;max-width:500px;font-size:15px}
+.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:25px}
+.btn{
+display:inline-block;padding:12px 23px;border-radius:30px;
+font-weight:bold;font-size:13px
 }
-
-.welcome p {
-  color: #d8c5a6;
-  margin-top: 8px;
+.primary{background:linear-gradient(135deg,#f3dda5,#c49648);color:#241309}
+.outline{border:1px solid var(--gold);color:var(--light)}
+.seal-wrap{display:grid;place-items:center}
+.seal{
+width:min(330px,75vw);aspect-ratio:1;border-radius:50%;
+border:1px solid var(--light);outline:10px solid #d8b36a13;
+box-shadow:0 0 0 23px #d8b36a0b,0 25px 80px #0008;
+background:radial-gradient(circle,#58331b,#28150c 70%);
+display:flex;flex-direction:column;align-items:center;justify-content:center;
+position:relative
 }
+.seal:before{content:"";position:absolute;inset:17px;border:1px solid #d8b36a66;border-radius:50%}
+.seal-icon{font-size:85px;line-height:1.2}
+.seal h3{font: bold 37px Georgia;color:var(--light);direction:ltr;margin:0}
+.seal strong{font-size:21px}
+.seal small{color:var(--gold);letter-spacing:3px;font-size:9px;direction:ltr}
 
-.menus {
-  max-width: 650px;
-  margin: auto;
-  padding: 20px 18px 45px;
+/* Sections */
+section{scroll-margin-top:80px}
+.section{padding:75px 0}
+.section-title{text-align:center;margin-bottom:35px}
+.section-title small{color:var(--gold);letter-spacing:3px}
+.section-title h2{font-size:34px;color:var(--light);margin:7px 0}
+.section-title p{color:var(--muted);font-size:14px;margin:0}
+.features{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.feature{
+background:linear-gradient(145deg,#3b2415,#24140c);
+border:1px solid #76532b;border-radius:16px;
+padding:25px 18px;text-align:center
 }
+.feature-icon{font-size:35px;color:var(--gold)}
+.feature h3{color:var(--light);font-size:17px;margin:7px 0}
+.feature p{color:var(--muted);font-size:13px;margin:0}
 
-.menu-card {
-  background: linear-gradient(145deg,#3b1b0d,#251008);
-  border: 1px solid #b98a3e;
-  border-radius: 18px;
-  padding: 25px 18px;
-  margin-bottom: 23px;
-  text-align: center;
-  box-shadow: 0 8px 22px #0008;
+/* Menu viewer */
+.menu-section{
+background:linear-gradient(180deg,#21130c,#301b10,#1a0e09);
+border-block:1px solid #76532b
 }
-
-.menu-icon {
-  font-size: 43px;
+.tabs{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-bottom:22px}
+.tab{
+background:#2b190f;color:var(--white);
+border:1px solid #76532b;border-radius:30px;
+padding:12px 25px;cursor:pointer;font-weight:bold
 }
-
-.menu-card h3 {
-  color: #edc779;
-  font-size: 23px;
-  margin: 8px 0;
+.tab.active{background:var(--gold);color:#241309;border-color:var(--gold)}
+.viewer{
+overflow:hidden;border:1px solid #a77b3c;
+border-radius:16px;background:#100a07;
+box-shadow:0 20px 50px #0007
 }
-
-.menu-card p {
-  color: #d7c1a0;
-  font-size: 14px;
-  margin-bottom: 18px;
+.viewer-head{
+display:flex;justify-content:space-between;align-items:center;
+gap:12px;padding:17px 20px;background:#2b190f;
+border-bottom:1px solid #76532b;flex-wrap:wrap
 }
-
-.buttons {
-  display: flex;
-  gap: 10px;
-  justify-content: center;
-  flex-wrap: wrap;
+.viewer-head h3{color:var(--light);margin:0;font-size:17px}
+.viewer-head small{color:var(--muted);font-size:10px}
+.viewer-actions{display:flex;gap:8px;flex-wrap:wrap}
+.viewer-actions a{
+border:1px solid #9c753c;color:var(--light);
+border-radius:20px;padding:7px 13px;font-size:12px
 }
-
-.btn {
-  display: inline-block;
-  text-decoration: none;
-  background: linear-gradient(135deg,#f1d28d,#c18a35);
-  color: #291306;
-  padding: 12px 22px;
-  border-radius: 30px;
-  font-weight: bold;
-  font-size: 14px;
+iframe{
+width:100%;height:min(78vh,900px);
+min-height:500px;border:0;display:block;background:white
 }
+.note{text-align:center;color:var(--muted);font-size:12px;margin-top:15px}
 
-.btn.secondary {
-  background: transparent;
-  border: 1px solid #d6ad62;
-  color: #f1d28d;
+/* About */
+.about-grid{
+display:grid;grid-template-columns:.8fr 1.2fr;
+align-items:center;gap:40px
 }
-
-.contact {
-  text-align: center;
-  padding: 30px 15px;
-  background: #281209;
-  border-top: 1px solid #a77a36;
+.about-art{
+min-height:270px;border:1px solid #76532b;border-radius:20px;
+display:grid;place-items:center;
+background:radial-gradient(circle,#57331c,#241309)
 }
+.about-art span{font-size:100px}
+.about-copy h2{font-size:32px;color:var(--light);margin:8px 0}
+.about-copy p{font-size:14px;color:#d2bea0}
+.about-copy small{color:var(--gold);letter-spacing:3px}
 
-.contact h2 {
-  color: #e9bd69;
-  margin-bottom: 10px;
+/* Footer */
+.last{
+text-align:center;padding:38px 15px;
+background:linear-gradient(110deg,#422715,#241309);
+border-block:1px solid #76532b
 }
-
-.contact p {
-  color: #ddc9a7;
+.last h2{color:var(--light);margin:0 0 5px}
+.last p{color:var(--muted);margin:0}
+footer{background:#100905;padding:30px 0 15px}
+.footer-top{
+display:flex;justify-content:space-between;align-items:center;
+gap:15px;flex-wrap:wrap;padding-bottom:20px;border-bottom:1px solid #76532b
 }
+.footer-name{font: bold 25px Georgia;color:var(--light);direction:ltr}
+.footer-links{display:flex;gap:18px}
+.footer-links a{font-size:12px;color:var(--muted)}
+.copy{text-align:center;color:#9c896c;font-size:11px;padding-top:15px}
 
-footer {
-  text-align: center;
-  padding: 18px;
-  color: #bba17b;
-  font-size: 12px;
-  background: #120804;
+@media(max-width:760px){
+.toggle{display:block}
+.links{
+display:none;position:absolute;top:72px;right:0;left:0;
+background:#1b100b;flex-direction:column;gap:0;padding:10px 5%;
+border-bottom:1px solid #76532b
 }
-
+.links.open{display:flex}
+.links a{padding:12px 0;border-bottom:1px solid #ffffff12}
+.nav-button{display:none}
+.hero-content{grid-template-columns:1fr;text-align:center;padding:45px 0}
+.hero h1{text-align:center}
+.hero p{margin:auto}
+.actions{justify-content:center}
+.seal{width:240px}
+.seal-icon{font-size:65px}
+.seal h3{font-size:29px}
+.features{grid-template-columns:1fr}
+.about-grid{grid-template-columns:1fr;text-align:center}
+.about-art{min-height:210px}
+.section{padding:55px 0}
+.section-title h2{font-size:28px}
+iframe{height:70vh;min-height:420px}
+.viewer-head{align-items:flex-start;flex-direction:column}
+}
 </style>
 </head>
 
 <body>
 
-<header>
-  <div class="logo">☕</div>
+<nav>
+<div class="container nav">
+ <a href="#home" class="brand">
+  <span class="brand-icon">☕</span>
+  <span class="brand-name">
+   <b>Hadota Cafe</b>
+   <small>COFFEE • MOMENTS • STORIES</small>
+  </span>
+ </a>
+
+ <button class="toggle" id="toggle">☰</button>
+
+ <div class="links" id="links">
+  <a href="#home">الرئيسية</a>
+  <a href="#features">مميزاتنا</a>
+  <a href="#menu">المنيو</a>
+  <a href="#about">عن حدوته</a>
+ </div>
+
+ <a href="#menu" class="nav-button">تصفح المنيو ←</a>
+</div>
+</nav>
+
+<main>
+
+<section class="hero" id="home">
+<div class="container hero-content">
+ <div>
+  <span class="eyebrow">A LITTLE MOMENT, A LOVELY STORY</span>
   <h1>Hadota Cafe</h1>
-  <h2>حدوته كافيه</h2>
-  <div class="gold-line"></div>
-  <p>كل فنجان قهوة وراه حدوته جميلة</p>
-</header>
+  <h2>كل فنجان وراه حدوته</h2>
+  <p>
+   أهلاً بيكم في حدوته كافيه.
+   اكتشفوا قائمتنا وتصفحوا اختياراتكم المفضلة
+   بسهولة من الموبايل أو الكمبيوتر.
+  </p>
+  <div class="actions">
+   <a class="btn primary" href="#menu">اكتشف المنيو ↓</a>
+   <a class="btn outline" href="#about">اعرف حدوته</a>
+  </div>
+ </div>
 
-<section class="welcome">
-  <h2>أهلاً بيكم في حدوته ❤️</h2>
-  <p>اختار المنيو واستمتع بتجربتك معانا</p>
+ <div class="seal-wrap">
+  <div class="seal">
+   <div class="seal-icon">☕</div>
+   <h3>Hadota Cafe</h3>
+   <strong>حدوته كافيه</strong>
+   <small>A STORY IN EVERY CUP</small>
+  </div>
+ </div>
+</div>
 </section>
 
-<section class="menus">
+<section class="section" id="features">
+<div class="container">
+ <div class="section-title">
+  <small>THE HADOTA EXPERIENCE</small>
+  <h2>لحظتك تبدأ من هنا</h2>
+  <p>تجربة تصفح سهلة وأنيقة لقائمة حدوته كافيه.</p>
+ </div>
 
-  <div class="menu-card">
-    <div class="menu-icon">☕</div>
-    <h3>المنيو الأول</h3>
-    <p>اكتشف اختياراتنا واستمتع بأجمل المشروبات</p>
-    <div class="buttons">
-      <a class="btn"
-         href="DOC-20261112-WA0019.pdf"
-         target="_blank">
-         عرض المنيو
-      </a>
-      <a class="btn secondary"
-         href="DOC-20261112-WA0019.pdf"
-         download>
-         تحميل PDF
-      </a>
-    </div>
+ <div class="features">
+  <div class="feature">
+   <div class="feature-icon">☕</div>
+   <h3>اختيارات متنوعة</h3>
+   <p>اكتشف الاختيارات الموجودة في قوائمنا.</p>
+  </div>
+  <div class="feature">
+   <div class="feature-icon">✦</div>
+   <h3>تصفح سهل</h3>
+   <p>افتح المنيو من موبايلك أو الكمبيوتر.</p>
+  </div>
+  <div class="feature">
+   <div class="feature-icon">♡</div>
+   <h3>على راحتك</h3>
+   <p>تنقل بين المنيوهين في أي وقت.</p>
+  </div>
+ </div>
+</div>
+</section>
+
+<section class="section menu-section" id="menu">
+<div class="container">
+ <div class="section-title">
+  <small>EXPLORE OUR MENU</small>
+  <h2>منيو Hadota Cafe</h2>
+  <p>اختار القائمة التي تريد تصفحها.</p>
+ </div>
+
+ <div class="tabs">
+  <button class="tab active" data-file="DOC-20261112-WA0019.pdf" data-title="المنيو الأول">
+   المنيو الأول
+  </button>
+  <button class="tab" data-file="DOC-20261113-WA0005.pdf" data-title="المنيو الثاني">
+   المنيو الثاني
+  </button>
+ </div>
+
+ <div class="viewer">
+  <div class="viewer-head">
+   <div>
+    <h3 id="menuTitle">المنيو الأول</h3>
+    <small>HADOTA CAFE • MENU</small>
+   </div>
+
+   <div class="viewer-actions">
+    <a id="openPdf" href="DOC-20261112-WA0019.pdf" target="_blank" rel="noopener">
+     فتح بحجم كامل ↗
+    </a>
+    <a id="downloadPdf" href="DOC-20261112-WA0019.pdf" download>
+     تحميل PDF ↓
+    </a>
+   </div>
   </div>
 
-  <div class="menu-card">
-    <div class="menu-icon">🍰</div>
-    <h3>المنيو الثاني</h3>
-    <p>اكتشف المزيد من اختيارات حدوته كافيه</p>
-    <div class="buttons">
-      <a class="btn"
-         href="DOC-20261113-WA0005.pdf"
-         target="_blank">
-         عرض المنيو
-      </a>
-      <a class="btn secondary"
-         href="DOC-20261113-WA0005.pdf"
-         download>
-         تحميل PDF
-      </a>
-    </div>
-  </div>
+  <iframe
+   id="pdfFrame"
+   src="DOC-20261112-WA0019.pdf#view=FitH"
+   title="منيو Hadota Cafe">
+  </iframe>
+ </div>
 
+ <p class="note">
+  المنيو للتصفح والعرض فقط. يمكنك فتح الملف كاملاً أو تحميله.
+ </p>
+</div>
 </section>
 
-<section class="contact">
-  <h2>Hadota Cafe</h2>
-  <p>يسعدنا زيارتكم ❤️</p>
-  <p>شكراً لاختياركم حدوته كافيه</p>
+<section class="section" id="about">
+<div class="container about-grid">
+ <div class="about-art"><span>☕</span></div>
+ <div class="about-copy">
+  <small>A PLACE FOR YOUR MOMENTS</small>
+  <h2>حكايتك ليها مكان في حدوته</h2>
+  <p>
+   Hadota Cafe مساحة للحظات البسيطة اللي بتحلى
+   بفنجان قهوة واختيارك المفضل.
+  </p>
+  <p>
+   جهزنا لك المنيو على الموقع علشان تتصفحه بسهولة،
+   وتتنقل بين القائمتين من أي جهاز.
+  </p>
+ </div>
+</div>
 </section>
+
+<section class="last">
+ <div class="container">
+  <h2>مستنيين حدوته جديدة؟</h2>
+  <p>تصفح المنيو واختار اللي على مزاجك.</p>
+ </div>
+</section>
+
+</main>
 
 <footer>
-  © 2026 Hadota Cafe - All Rights Reserved
+<div class="container">
+ <div class="footer-top">
+  <div class="footer-name">Hadota Cafe</div>
+  <div class="footer-links">
+   <a href="#home">الرئيسية</a>
+   <a href="#menu">المنيو</a>
+   <a href="#about">عن حدوته</a>
+  </div>
+ </div>
+ <div class="copy">
+  © <span id="year"></span> Hadota Cafe - All Rights Reserved
+ </div>
+</div>
 </footer>
+
+<script>
+const tabs=document.querySelectorAll(".tab");
+const frame=document.getElementById("pdfFrame");
+const title=document.getElementById("menuTitle");
+const open=document.getElementById("openPdf");
+const download=document.getElementById("downloadPdf");
+
+tabs.forEach(tab=>{
+ tab.addEventListener("click",()=>{
+  const file=tab.dataset.file;
+  tabs.forEach(t=>t.classList.remove("active"));
+  tab.classList.add("active");
+  title.textContent=tab.dataset.title;
+  frame.src=file+"#view=FitH";
+  frame.title=tab.dataset.title;
+  open.href=file;
+  download.href=file;
+ });
+});
+
+const toggle=document.getElementById("toggle");
+const links=document.getElementById("links");
+
+toggle.addEventListener("click",()=>{
+ links.classList.toggle("open");
+ toggle.textContent=links.classList.contains("open")?"×":"☰";
+});
+
+links.querySelectorAll("a").forEach(link=>{
+ link.addEventListener("click",()=>{
+  links.classList.remove("open");
+  toggle.textContent="☰";
+ });
+});
+
+document.getElementById("year").textContent=new Date().getFullYear();
+</script>
 
 </body>
 </html>
